@@ -5,7 +5,10 @@ import com.example.entity.Student;
 import com.example.service.ParentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.stomp.StompSession;
+import org.springframework.messaging.simp.stomp.StompSessionHandler;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.socket.messaging.WebSocketStompClient;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -17,6 +20,9 @@ public class ParentController {
 
     @Autowired
     private ParentService parentService;
+
+
+
 
     @PostMapping("")
     public ResponseEntity registerTeacher(@RequestBody Parent parent) throws NoSuchAlgorithmException {

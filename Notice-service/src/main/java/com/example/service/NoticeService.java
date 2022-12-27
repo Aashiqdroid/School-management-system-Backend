@@ -6,7 +6,10 @@ import com.example.entity.Teacher;
 import com.example.repository.NoticeRepository;
 import com.example.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class NoticeService {
@@ -20,5 +23,9 @@ public class NoticeService {
         return noticeRepository.save(notice);
 
 
+    }
+
+    public List<Notice> getAllNotices() {
+        return noticeRepository.findAllOverRide();
     }
 }

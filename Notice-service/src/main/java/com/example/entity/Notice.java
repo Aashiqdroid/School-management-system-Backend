@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,6 +18,7 @@ public class Notice {
     private long id;
     private String title;
     private String description;
+    private Date date;
 
     @ManyToOne
     @JoinColumn(name = "teacher_id",referencedColumnName = "id")
